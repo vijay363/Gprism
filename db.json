@@ -1,0 +1,105 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "user1@gmail.com",
+      "password": "password123"
+    },
+    {
+      "id": 2,
+      "email": "user2@gmail.com",
+      "password": "mypassword"
+    },
+    {
+      "id": 3,
+      "email": "hi@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": 4,
+      "email": "user3@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": 5,
+      "email": "user4@gmail.com",
+      "password": "123456789"
+    }
+  ],
+  "vendors": [
+    { "id": 1, "company": "Being Cared Private Limited" },
+    { "id": 2, "company": "Soft Solutions Private Limited" },
+    { "id": 3, "company": "Amazon Solutions" },
+    { "id": 4, "company": "Refit & Repair" },
+    { "id": 5, "company": "Solimo Uprise" },
+    { "id": 6, "company": "Solimo Uprise" },
+    { "id": 7, "company": "Solimo Uprise" },
+    { "id": 8, "company": "Refit & Repair" },
+    { "id": 9, "company": "Tech Innovations Pvt. Ltd." },
+    { "id": 10, "company": "GreenTech Enterprises" },
+    { "id": 11, "company": "QuickFix Solutions" },
+    { "id": 12, "company": "Visionary Services Ltd." },
+    { "id": 13, "company": "NetCore Technologies" },
+    { "id": 14, "company": "Bright Future Enterprises" },
+    { "id": 15, "company": "Precision Repairs Pvt. Ltd." },
+    { "id": 16, "company": "Prime Systems Ltd." },
+    { "id": 17, "company": "UltraTech Solutions" },
+    { "id": 18, "company": "TechMaster Industries" },
+    { "id": 19, "company": "Future Vision Solutions" },
+    { "id": 20, "company": "Skyline Innovations Pvt. Ltd." }
+  ],
+   "irns": [
+      { "id": 1, "irn": "IRN/2024-25/001" },
+      { "id": 2, "irn": "IRN/2024-25/002" },
+      { "id": 3, "irn": "IRN/2024-25/003" },
+      { "id": 4, "irn": "IRN/2024-25/004" },
+      { "id": 5, "irn": "IRN/2024-25/005" },
+      { "id": 6, "irn": "IRN/2024-25/006" },
+      { "id": 7, "irn": "IRN/2024-25/007" },
+      { "id": 8, "irn": "IRN/2024-25/008" },
+      { "id": 9, "irn": "IRN/2024-25/009" },
+      { "id": 10, "irn": "IRN/2024-25/010" },
+      { "id": 11, "irn": "IRN/2024-25/011" },
+      { "id": 12, "irn": "IRN/2024-25/012" },
+      { "id": 13, "irn": "IRN/2024-25/013" },
+      { "id": 14, "irn": "IRN/2024-25/014" },
+      { "id": 15, "irn": "IRN/2024-25/015" },
+      { "id": 16, "irn": "IRN/2024-25/016" },
+      { "id": 17, "irn": "IRN/2024-25/017" },
+      { "id": 18, "irn": "IRN/2024-25/018" },
+      { "id": 19, "irn": "IRN/2024-25/019" },
+      { "id": 20, "irn": "IRN/2024-25/020" },
+      { "id": 21, "irn": "IRN/2024-25/021" },
+      { "id": 22, "irn": "IRN/2024-25/022" },
+      { "id": 23, "irn": "IRN/2024-25/023" },
+      { "id": 24, "irn": "IRN/2024-25/024" },
+      { "id": 25, "irn": "IRN/2024-25/025" },
+      { "id": 26, "irn": "IRN/2024-25/026" },
+      { "id": 27, "irn": "IRN/2024-25/027" },
+      { "id": 28, "irn": "IRN/2024-25/028" },
+      { "id": 29, "irn": "IRN/2024-25/029" },
+      { "id": 30, "irn": "IRN/2024-25/030" },
+      { "id": 31, "irn": "IRN/2024-25/031" },
+      { "id": 32, "irn": "IRN/2024-25/032" },
+      { "id": 33, "irn": "IRN/2024-25/033" },
+      { "id": 34, "irn": "IRN/2024-25/034" },
+      { "id": 35, "irn": "IRN/2024-25/035" },
+      { "id": 36, "irn": "IRN/2024-25/036" },
+      { "id": 37, "irn": "IRN/2024-25/037" },
+      { "id": 38, "irn": "IRN/2024-25/038" },
+      { "id": 39, "irn": "IRN/2024-25/039" },
+      { "id": 40, "irn": "IRN/2024-25/040" },
+      { "id": 41, "irn": "IRN/2024-25/041" },
+      { "id": 42, "irn": "IRN/2024-25/042" },
+      { "id": 43, "irn": "IRN/2024-25/043" },
+      { "id": 44, "irn": "IRN/2024-25/044" },
+      { "id": 45, "irn": "IRN/2024-25/045" },
+      { "id": 46, "irn": "IRN/2024-25/046" },
+      { "id": 47, "irn": "IRN/2024-25/047" },
+      { "id": 48, "irn": "IRN/2024-25/048" },
+      { "id": 49, "irn": "IRN/2024-25/049" },
+      { "id": 50, "irn": "IRN/2024-25/050" }
+    ]
+  
+  
+}

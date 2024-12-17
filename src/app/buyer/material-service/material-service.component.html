@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="form-group">
+    <label>Material Service Type ?</label>
+    <div class="radio-group">
+      <!-- PBG radio button -->
+      <input type="radio" id="pbg" name="advance-required" value="yes" />
+      <label for="pbg">PBG</label>
+      
+      <!-- Retention radio button -->
+      <input type="radio" id="retention" name="advance-required" value="no" />
+      <label for="retention">Retention</label>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="retention-period">Retention Period</label>
+    <div class="text-PO">
+      <input
+        type="text"
+        id="retention-period"
+        name="retention-period"
+        placeholder="Enter"
+      />
+    </div>
+  </div>
+</div>
+
+<div class="bottom-field">
+  <!-- Update button -->
+  <button (click)="navigateToFinalPayment()" class="btn-submit">
+    Update
+  </button>
+</div>

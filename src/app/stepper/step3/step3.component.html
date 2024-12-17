@@ -1,0 +1,26 @@
+<div *ngIf="isNfaAvailable !== null">
+  <div *ngIf="isNfaAvailable; else noNfaContent">
+    
+    <div class="container">
+      <img src="../../../assets/success.svg" />
+      <p>We've successfully generated the IRN.</p>
+      <p class="subtext">Technology and office supplies.</p>
+      <p class="irn">IRN/2024-25/001</p>
+      <div class="buttons">
+        <button class="dashboard">GO TO DASHBOARD</button>
+        <button class="proceed" (click)="proceed.emit()">OK, PROCEED</button>
+      </div>
+    </div>
+  </div>
+  <ng-template #noNfaContent>
+  
+    <div class="container">
+      <img src="../../../assets/Decline.svg" />
+      <p class="Decline">IRN Declined</p>
+      <p>Please contact Admin.</p>
+      <div class="buttons">
+        <button class="OK">OK</button>
+      </div>
+    </div>
+  </ng-template>
+</div>

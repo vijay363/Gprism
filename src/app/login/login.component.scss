@@ -1,0 +1,153 @@
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 20px;
+  background: #003087;
+  text-align: left;
+  overflow: hidden; 
+}
+.logo-img {
+  width: 30%;
+  height: 35px;
+  margin-top: 50px;
+  margin-left: 30px
+  
+}
+.card{
+  background: #003087;
+  border-radius: none;
+}
+.text {
+margin-top: 10px;
+ padding: 10px;
+ margin-left: 30px;
+ 
+}
+
+h5{
+  color: white;
+  font-weight: 350;
+ 
+  font-family: "Maven Pro", serif;
+  font-size: 30px;
+}
+.dashboard-img-wrapper {
+  display: flex;
+  margin-left: 30px;
+}
+.dashboard-img {
+  width: 390px;
+  height: 390px;
+  max-width: 100%;
+  margin-bottom: 40px;
+}
+.right-side {
+  height: 100vh;
+  background-color: white;
+}
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+}
+.gPrism-cart {
+  width: 200px;
+  height: 110px;
+  gap: 20px;
+  opacity: 0px;
+  margin-left: 70px;
+  margin-bottom: 20px;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.btn-block {
+  width: 100%;
+}
+.text-center {
+  font-family: "Maven Pro", serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28.1px;
+  text-align: left;
+  color: #012169;
+}
+::placeholder,
+input {
+  font-family: "Maven Pro", serif;
+  font-weight: 450;
+}
+.form-label {
+  font-family: "Maven Pro", serif;
+  font-weight: bold;
+  color: #003087;
+}
+button {
+  background: #009cde;
+  width: 330px;
+  height: 35px;
+  font-family: Maven Pro;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28.2px;
+  gap: 10px;
+  border: white;
+  border-radius: 4px 4px 4px 4px;
+  opacity: 0px;
+  color: rgb(255, 255, 255);
+}
+.forgot-password {
+  margin-top: 10px;
+  font-weight: 200;
+}
+.forgot-password a {
+  color: #007bff;
+  text-decoration: none;
+}
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+.form-label {
+  font-weight: bold;
+  color: #003087;
+}
+
+.form-control-underline {
+  border: none;
+  border-bottom: 1px solid #22b6e4;
+  width: 100%;
+  outline: none;
+  padding: 5px 0;
+  font-size: 16px;
+}
+
+.form-control-underline:focus {
+  border-bottom: 2px solid #007bff;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group-append {
+  position:absolute;
+right: 0px;
+  top: 10px;
+}
+
+.input-group-text {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px),
+  only screen and (min-width: 601px) and (max-width: 1024px) and (orientation: portrait) {
+  .left-side,
+  .right-side {
+    flex: 0 0 100%; 
+  }
+}

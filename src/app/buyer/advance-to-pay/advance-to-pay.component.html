@@ -1,0 +1,120 @@
+<div class="container">
+  <div class="form-group">
+    <label>Advance Required?</label>
+    <div class="radio-group">
+      <input
+        type="radio"
+        id="advance-yes"
+        name="advance-required"
+        value="yes"
+        [(ngModel)]="isAdvanceRequired"
+      />
+      <label for="advance-yes">Yes</label>
+      <input
+        type="radio"
+        id="advance-no"
+        name="advance-required"
+        value="no"
+        [(ngModel)]="isAdvanceRequired"
+      />
+      <label for="advance-no">No</label>
+    </div>
+  </div>
+<div *ngIf="isAdvanceRequired === 'yes'">
+   <div class="form-group">
+    <label>PO% of Amount</label>
+    <div class="text-PO">
+      <input type="text" id="po-amount" name="po-amount" placeholder="Enter" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Payment Security (BG/Cheque)</label>
+    <div class="radio-group">
+      <input type="radio" id="payment-yes" name="payment-required" value="yes" />
+      <label for="payment-yes">Yes</label>
+      <input type="radio" id="payment-no" name="payment-required" value="no" />
+      <label for="payment-no">No</label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Less than 5 Lakh</label>
+    <div class="radio-group">
+      <input type="radio" id="amount-yes" name="amount-required" value="yes" />
+      <label for="amount-yes">Yes</label>
+      <input type="radio" id="amount-no" name="amount-required" value="no" />
+      <label for="amount-no">No</label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>ABG/PDC Required?</label>
+    <div class="radio-group">
+      <input type="radio" id="abg-yes" name="abg-required" value="yes" />
+      <label for="abg-yes">Yes</label>
+      <input type="radio" id="abg-no" name="abg-required" value="no" />
+      <label for="abg-no">No</label>
+    </div>
+  </div></div>
+  <div  *ngIf="isAdvanceRequired === 'no'">
+    <div class="form-group">
+      <label for="milestones">No of Milestones</label>
+      <input
+        id="milestones"
+        class="input-field"
+        name="milestones"
+        type="number"
+        min="0"
+        max="12"
+        placeholder="Enter number (1-12)"
+        [(ngModel)]="milestoneCount"
+        (input)="generateCards()"
+      />
+    </div>
+    
+    <div class="card-container">
+      <div class="card" *ngFor="let milestone of milestones; let i = index">
+        <p><input type="text" placeholder="Add Description"></p>
+        <p><input type="text" placeholder="PO Amount"></p>
+      </div>
+    </div>
+    
+    
+    <div class="form-group">
+      <label for="payment-yes">Applicability of cheque</label>
+      <div class="radio-group">
+        <input type="radio" id="payment-yes" name="payment-required" value="yes" [(ngModel)]="cheque"/>
+        <label for="payment-yes">Cheque</label>
+        <input type="radio" id="payment-no" name="payment-required" value="no" [(ngModel)]="cheque"/>
+        <label for="payment-no">CPMG</label>
+      </div>
+    </div>
+    <div class="form-group"  *ngIf="cheque === 'yes'">
+      <label for="amount-yes">Received Cheque</label>
+      <div class="radio-group">
+        <input type="radio" id="amount-yes" name="amount-required" value="yes" />
+        <label for="amount-yes">Yes</label>
+        <input type="radio" id="amount-no" name="amount-required" value="no" />
+        <label for="amount-no">No</label>
+      </div>
+    </div>
+    <div class="form-group"  *ngIf="cheque === 'no'">
+      <label for="amount-yes">Received CPMG</label>
+      <div class="radio-group">
+        <input type="radio" id="amount-yes" name="amount-required" value="yes" />
+        <label for="amount-yes">Yes</label>
+        <input type="radio" id="amount-no" name="amount-required" value="no" />
+        <label for="amount-no">No</label>
+      </div>
+    </div>
+
+
+  </div>
+
+ 
+
+  <div class="bottom-field">
+    <button (click)="navigateToShipment()" class="btn-submit">Update</button>
+  </div>
+</div>

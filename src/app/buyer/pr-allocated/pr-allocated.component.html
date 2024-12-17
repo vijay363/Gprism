@@ -1,0 +1,116 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="prDate">PR Date</label>
+        <input
+          type="date"
+          id="prDate"
+          class="input-field"
+          placeholder="Select Date"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="prIrnDate">PR/IRN Received Date</label>
+        <input
+          type="date"
+          id="prIrnDate"
+          class="input-field"
+          placeholder="Select Date"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="sbu1">SBU's</label>
+        <select id="sbu1" class="input-field">
+          <option value="">Select</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="functionalArea1">Functional Area/ID</label>
+        <select id="functionalArea1" class="input-field">
+          <option value="">Select</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="subFunctionalArea1">Sub-Functional Area/ID</label>
+        <select id="subFunctionalArea1" class="input-field">
+          <option value="">Select</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="sbu2">Segment/Group</label>
+        <select id="sbu2" class="input-field">
+          <option value="">Select</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="functionalArea2">Cost Centre/SPV/Project Name</label>
+        <select id="functionalArea2" class="input-field">
+          <option value="">Select</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="subFunctionalArea2">Qty/No of line items</label>
+        <select id="subFunctionalArea2" class="input-field">
+          <option value="">Select</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="subFunctionalArea3">Order Type</label>
+        <select id="subFunctionalArea3" class="input-field">
+          <option value="">Select</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="subFunctionalArea4">Nature of the Order</label>
+        <select id="subFunctionalArea4" class="input-field">
+          <option value="">Select</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-field">
+    <div class="form-group">
+      <label for="packageMaterialDescription"
+        >Package/Material Description</label >
+      <input type="text" id="packageMaterialDescription" class="input-field" />
+    </div>
+    <button (click)="navigateToManapproved()" class="btn-submit">Next</button>
+  </div>
+</div>

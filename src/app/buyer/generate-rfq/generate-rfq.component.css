@@ -1,0 +1,210 @@
+/* General Card Styles */
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Card Body Styles */
+.card-body {
+  display: flex;
+  align-items: center;
+  }
+
+/* Card Content: Ensure everything stays in a line */
+.card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px; 
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Image Styles */
+.image {
+  width: 30px; /* Adjust as needed */
+  height: 30px;
+  border-radius: 50%; /* Optional: Make it circular */
+}
+
+/* Vendor Name Styles */
+.vendor-name {
+  flex: 1; /* Fills remaining space */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+.irn-name{
+  color: #009CDE;
+    text-decoration: underline;
+    text-decoration-color: #009CDE;
+}
+/* IRN Icon Styles */
+.irn img {
+  width: 50px; /* Adjust as needed */
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.2s ease; /* Smooth hover effect */
+}
+
+.irn img:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Card Footer Styles */
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}
+
+/* Button Styles */
+.btn {
+  padding: 10px 20px;
+  background-color: #0033a0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #012169;
+}
+.card-irn {
+  display: flex; /* Align items in a row */
+  flex-wrap: wrap; /* Wrap to next line if space runs out */
+  gap: 10px; /* Add space between items */
+}
+
+.card-irn > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  background-color: #f9f9f9; /* Optional: Background for each IRN */
+  border: 1px solid #ddd; /* Optional: Border for each IRN */
+  border-radius: 4px; /* Optional: Rounded corners */
+  font-size: 14px; /* Adjust text size */
+  color: #333;
+}
+
+/* Utility Classes */
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  z-index: 5;
+}
+
+.custom-modal-dialog {
+  max-width: 800px;
+  width: 100%;
+}
+
+.custom-modal-content {
+  padding: 20px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.btn-cancel {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+}
+
+.btn-hold {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+}
+
+/* Search Input Styles */
+.search-input {
+  width: 700px;
+  position: relative;
+}
+
+.search-input input[type="search"] {
+  height: 60px;
+  background-color: whitesmoke;
+  border: 2px solid #abb7c2;
+  padding-left: 10px;
+  font-family: Poppins, sans-serif;
+}
+
+.search-input button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 44px;
+  width: 77px;
+  border-radius: 5px;
+  background-color: #0033a0;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Form Styles */
+label {
+  color: #012169;
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+}
+
+.form-group {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+/* Responsive Behavior */
+@media (max-width: 768px) {
+  .search-input {
+    width: 100%;
+  }
+
+  .card-content {
+    flex-direction: column;
+    align-items: flex-start;
+
+  }
+
+  .card {
+    height: auto;
+  }
+}

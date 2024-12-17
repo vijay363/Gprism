@@ -1,0 +1,32 @@
+
+
+label {
+  color: #012169;
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+}
+
+.form-group {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid black;
+}
+.bottom-field {
+  width: 100%;
+}
+.btn-submit {
+  float: right;
+  margin-top: 20px;
+  padding: 10px 30px;
+  background-color: #003087;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}

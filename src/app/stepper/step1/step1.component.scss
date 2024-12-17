@@ -1,0 +1,59 @@
+.form-group {
+  margin-bottom: 10px;
+  font-size: small;
+  font-weight: 600;
+}
+
+input[type="text"] {
+  border: none;
+  border-bottom: 1px solid #33363f;
+  padding: 0;
+  margin: 0;
+  color: black;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+span {
+  font-family: Maven Pro;
+  font-weight: 400;
+  color: #636366;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: Maven Pro;
+  color: #012169;
+}
+
+.radio-group {
+  display: flex;
+  gap: 5px;
+}
+
+.card {
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  width: 150px;
+}
+
+.next-button {
+  width: 110px;
+  padding: 10px;
+  background-color: #0033a0;
+  color: #fff;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}

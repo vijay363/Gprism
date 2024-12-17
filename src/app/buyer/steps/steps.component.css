@@ -1,0 +1,72 @@
+
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    background: #f1f6f9;
+    width: 300px;
+    position: relative;
+  }
+  
+  .step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .step:last-child {
+    margin-bottom: 0;
+  }
+  
+  .step .icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #d3d3d3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    position: relative;
+    z-index: 1;
+    background-color: #ffffff;
+  }
+  
+  .step.completed .icon {
+    border-color: #00aaff;
+    background-color: #00aaff;
+  }
+  
+  .step.completed .icon i {
+    color: #ffffff;
+  }
+  
+  .step .icon i {
+    font-size: 14px;
+    color: #d3d3d3;
+  }
+  
+  .step .text {
+    font-size: 14px;
+    color: #333333;
+  }
+  
+  .step.completed .text {
+    color: #00aaff;
+  }
+  
+  .line {
+    position: absolute;
+    width: 2px;
+    background-color: #d3d3d3;
+    top: 0;
+    bottom: 0;
+    left: 32px;
+    z-index: 0;
+  }
+  
+  .step.completed .line {
+    background-color: #00aaff;
+  }
+  

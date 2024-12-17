@@ -1,0 +1,132 @@
+<pre>
+
+
+</pre>
+<div class="container">
+  <h1>Generate RFQ</h1>
+  <h4>Vendors <span (click)="addVendor('vendor')"><img src="../../../assets/plus.svg"></span></h4>
+  <div class="container">
+    <div>
+      <div *ngIf="venderList.addedVendorList.length > 0">
+        <div class="card" *ngFor="let vendor of venderList?.addedVendorList ;let i=index">
+          <div class="card-body">
+            <div class="card-content">
+              <img src="../../../assets/shop.svg" alt="Vendor Logo" class="image">
+              <span class="vendor-name">{{ vendor.company }}</span>
+              <span class="irn">
+                <img (click)="addIrn(i)" src="../../../assets/Frame 427319573.svg">
+              </span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="container">
+              <div class="row">
+                <div class="card-irn">
+                  <div *ngFor="let irn of vendor?.arrList">
+                    <img src="../../../assets/box-time.svg">{{ irn.irn }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h4>IRN's</h4>
+    <div class="card" *ngFor="let ir of irn.addedIrnList;let i=index ">
+      <div class="card-content">
+        <span class="irn-name"> <img src="../../../assets/box-time.svg" alt="Vendor Logo" class="image">
+          {{ ir.irn }}</span>
+        <span class="irn">
+          <img (click)="addVendor('irn',i,ir)" class="add-irn" src="../../../assets/Frame 427319573 (1).svg">
+        </span>
+      </div>
+      <div class="card-footer">
+        <div class="container">
+          <div class="row">
+            <div class="card-irn" *ngFor="let ve of ir?.arrList">
+              <div>
+                <img src="../../../assets/shop.svg">{{ ve.company }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="modal fade" id="vendorModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered custom-modal-dialog">
+      <div class="modal-content custom-modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Vendor</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            (click)="close('vendorModal')"></button>
+        </div>
+        <div class="modal-body">
+          <div class="search-input">
+            <input type="search" class="form-control" [(ngModel)]="search"
+              placeholder="Search with Vendor Name or IRN Name " aria-label="Search" />
+            <button class="btn" type="submit" (click)="vendorslist()">Search</button>
+          </div>
+          <div class="card-body" *ngFor="let ven of venderList.search">
+            <div class="card-content">
+              <img src="../../../assets/shop.svg" alt="Vendor Logo" class="image">
+              <span class="vendor-name">{{ ven.company }}</span>
+              <span class="irn">
+                <input type="checkbox" [checked]="" (change)="checkboxVendor($event,ven)">
+              </span>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-cancel" data-bs-dismiss="modal" (click)="close('vendorModal')">
+            Cancel
+          </button>
+          <button type="button" class="btn-add" (click)="addVendorNewList(modelType)">Addv</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="irnModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered custom-modal-dialog">
+      <div class="modal-content custom-modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Irn to </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            (click)="close('irnModal')"></button>
+        </div>
+        <div class="modal-body">
+          <div class="search-input">
+            <input type="search" class="form-control" [(ngModel)]="search"
+              placeholder="Search with Vendor Name or IRN Name " aria-label="Search" />
+            <button class="btn" type="submit" (click)="irnlist()">Search</button>
+          </div>
+          <div class="card-body" *ngFor="let ir of irnList.search">
+            <div class="card-content">
+              <img src="../../../assets/box-time.svg" alt="Vendor Logo" class="image">
+              <span class="vendor-name">{{ ir.irn }}</span>
+              <span class="irn">
+                <input type="checkbox" [checked]="" (change)="checkboxIrn($event,ir)">
+              </span>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-cancel" data-bs-dismiss="modal" (click)="close('irnModal')">
+            Cancel
+          </button>
+          <button type="button" class="btn-add" (click)="addIrnNewList()">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

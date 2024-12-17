@@ -1,0 +1,308 @@
+<div class="container">
+    <div class="row">
+      <div class="background-overlay" *ngIf="isModalVisible"></div>
+      <div class="card card-top">
+        <div class="form-group">
+          <label>Is Techincal Evaluation Required?</label>
+          <div class="radio-group">
+            <input
+              type="radio"
+              id="evaluation-yes"
+              name="evaluation-required"
+              value="yes"
+            />
+            <label for="evaluation-yes">Yes</label>
+            <input
+              type="radio"
+              id="evaluation-no"
+              name="evaluation-required"
+              value="no"
+            />
+            <label for="evaluation-no">No</label>
+          </div>
+        </div>
+        <button class="send-button">SEND</button>
+      </div>
+  
+      <div class="card">
+        <div class="vendor" style="padding: 10px">
+          <h4><img src="../../assets/shop.svg" /> Bharathi Enterprises</h4>
+          <div class="btns" *ngIf="finalOffer">
+            <button
+              class="btn-recommended"
+              (click)="reasonRecommendation()"
+              [class.green]="isRecommend"
+            >
+              <img src="../../../assets/3dcube.svg" /> Recommended
+            </button>
+            <div
+              class="modal fade"
+              id="reason"
+              tabindex="-1"
+              aria-labelledby="initialOfferModalLabel"
+              aria-hidden="true"
+            >
+              <div
+                class="modal-dialog modal-dialog-centered custom-modal-dialog custom-reason-modal"
+              >
+                <div class="modal-content custom-modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Bharathi Enterprises Recommended</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      (click)="closeReasonModal()"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <label for="reasonRecommnedatoin"
+                        >Reason for Recommendation</label
+                      >
+                      <input
+                        type="text"
+                        id="reasonRecommnedatoin"
+                        class="input-field"
+                        placeholder="Enter Reason"
+                        [(ngModel)]="reasonForRecommendation"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label>
+                        Upload SAP Document<span> (Optional) </span>
+                      </label>
+                      <div class="button-group">
+                        <div class="card-button">
+                          <p-fileUpload
+                            mode="basic"
+                            chooseLabel="Upload"
+                            chooseIcon="pi pi-upload"
+                            name="sapDocument[]"
+                            url="https://www.primefaces.org/cdn/api/upload.php"
+                            accept="image/*"
+                            maxFileSize="1000000"
+                            (onUpload)="onUpload($event)"
+                            [(ngModel)]="uploadedFile"
+                            name="uploadedFile"
+                          >
+                          </p-fileUpload>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn-cancel"
+                      (click)="closeReasonModal()"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      type="button"
+                      class="btn-submit"
+                      (click)="submitReason()"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="btn-level">L1</button>
+          </div>
+        </div>
+        <div class="main">
+          <p class="irn-number">
+            <img
+              src="../../assets/box-time.svg"
+              class="box-time"
+              alt="RFQ Image"
+            />IRN /2024-25/001<img src="../../../assets/info-circle.svg" />
+          </p>
+  
+          <div class="card-body">
+            <p>
+              <img src="../../../assets/TICK.svg" />
+              RFQ Sent Date
+              <br />
+              &nbsp;&nbsp;&nbsp; 19 Sep 2024
+            </p>
+  
+            <div *ngIf="receivedOffer">
+              <p>
+                <img src="../../../assets/TICK.svg" />
+                Initial Offer Received Date
+                <br />
+                &nbsp;&nbsp;&nbsp; {{ receivedOffer.date }}
+              </p>
+            </div>
+            <div *ngIf="receivedOffer">
+              <p>
+                <img src="../../../assets/TICK.svg" />
+                Initial Offer Amount
+                <br />
+                &nbsp;&nbsp;&nbsp; {{ receivedOffer.amount }}
+              </p>
+            </div>
+  
+            <div *ngIf="finalOffer">
+              <p>
+                <img src="../../../assets/TICK.svg" />
+                Final Offer Received Date
+                <br />
+                &nbsp;&nbsp;&nbsp; {{ finalOffer.date }}
+              </p>
+            </div>
+            <div *ngIf="finalOffer">
+              <p>
+                <img src="../../../assets/TICK.svg" />
+                Final Offer Amount
+                <br />
+                &nbsp;&nbsp;&nbsp; {{ finalOffer.amount }}
+              </p>
+            </div>
+  
+            <button
+              *ngIf="!finalOffer"
+              (click)="handleOffer()"
+              class="initial-button"
+            >
+              <img src="../../../assets/add-circle.png" class="img-plus" />
+              {{ isFinalOffer ? "Final Offer Amount" : "Initial Offer Amount" }}
+            </button>
+  
+            <div
+              class="modal fade"
+              id="initialOfferModal"
+              tabindex="-1"
+              aria-labelledby="initialOfferModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered custom-modal-dialog">
+                <div class="modal-content custom-modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Initial Offer</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      (click)="closeModal('initialOfferModal')"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <label for="initialOffer"
+                        >Initial Offer Received Date</label
+                      >
+                      <input
+                        type="date"
+                        id="initialOfferDate"
+                        class="input-field"
+                        [(ngModel)]="initialOfferDate"
+                        placeholder="Select Date"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="initialOfferAmount">Initial Offer Amount</label>
+                      <input
+                        type="text"
+                        id="initialOfferAmount"
+                        class="input-field"
+                        [(ngModel)]="initialOfferAmount"
+                        placeholder="24000"
+                      />
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn-cancel"
+                      (click)="closeModal('initialOfferModal')"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      type="button"
+                      class="btn-submit"
+                      (click)="submitInitialOffer()"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div
+              class="modal fade"
+              id="finalOfferModal"
+              tabindex="-1"
+              aria-labelledby="finalOfferModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered custom-modal-dialog">
+                <div class="modal-content custom-modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Final Offer</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      (click)="closeModal('finalOfferModal')"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <label for="finalOffer">Final Offer Received Date</label>
+                      <input
+                        type="date"
+                        id="finalOfferDate"
+                        class="input-field"
+                        [(ngModel)]="finalOfferDate"
+                        placeholder="Select Date"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="finalOfferAmount">Final Offer Amount</label>
+                      <input
+                        type="text"
+                        id="finalOfferAmount"
+                        class="input-field"
+                        [(ngModel)]="finalOfferAmount"
+                        placeholder="25000"
+                      />
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn-cancel"
+                      (click)="closeModal('finalOfferModal')"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      type="button"
+                      class="btn-submit"
+                      (click)="submitFinalOffer()"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="div">
+        <button class="update-btn" style="float: right; padding: 8px">
+          UPDATE
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  

@@ -1,0 +1,13 @@
+ .bottom-field {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    height: 100%;
+  }
+  .btn-submit {
+    padding: 10px 30px;
+    background-color: #003087;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+  }

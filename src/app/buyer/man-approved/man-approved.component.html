@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="body"></div>
+  <div class="row"><div class="col-md-6">
+      <div class="form-group">
+        <label for="manapprovedDate">MAN Approved Date</label>
+        <input
+          type="date"
+          id="manapprovedDate"
+          class="input-field"
+          placeholder="Select Date"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="l1price">L1 Price</label>
+        <input type="text" id="l1price" class="input-field"    placeholder="26000"/>
+      </div>
+
+      <div class="form-group">
+        <label for="l2price">L2 Price</label>
+        <input type="text" id="l2price" class="input-field"  placeholder="Price" />
+      </div>
+      <div class="form-group">
+        <label for="controlbidget">Contrl Budget/IE</label>
+        <input type="text" id="controlbidget" class="input-field"  placeholder="Enter" />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="lpp"
+          >LPP (Optional)</label
+        >
+        <input type="text" id="lpp" class="input-field"  placeholder="Enter" />
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="bottom-field">
+      <!-- Add the button here -->
+      <button (click)="navigateToPmc()" class="btn-submit">Update</button>
+    </div>

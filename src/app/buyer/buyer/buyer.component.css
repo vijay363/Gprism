@@ -1,0 +1,169 @@
+
+.row {
+    background-color: whitesmoke;
+    padding: 60px;
+  }
+  .items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .pr-pdf,.nfa-pdf{
+    color: #009cde;
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  
+  .card {
+    
+    width: 100%;
+    height: 100%;
+    display: flex; 
+    border: 1px solid #ccc;
+    flex-direction: row;
+    position: relative;
+   z-index: 0;
+  }
+  .left-card {
+    border: none;
+    margin: 20px;
+    width: 450px;
+    background: #f1f6f9;
+  }
+  h6 {
+    font-weight: bold;
+  }
+  
+  
+  .Irn {
+    color: white;
+  
+    padding: 10px 20px 10px 20px;
+    gap: 10px;
+    border-radius: 4px 4px 4px 4px;
+    border: none;
+    background: #ff5c5c;
+  }
+  .copy {
+    color: white;
+    padding: 10px 20px 10px 20px;
+    gap: 10px;
+    border-radius: 4px 4px 4px 4px;
+    border: none;
+    background: #009cde;
+  }
+  .rfq {
+    color: white;
+    padding: 10px 20px 10px 20px;
+    gap: 10px;
+    border-radius: 4px 4px 4px 4px;
+    border: none;
+    background: #009cde;
+  }
+  
+  .right-card {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+  }
+ 
+
+.custom-modal-dialog {
+  max-width: 800px; 
+  width: 100%;
+}
+
+.custom-modal-content {
+  padding: 20px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end; 
+  gap: 10px; 
+  margin-top: 10px;
+  padding-top: 10px;
+
+}
+
+/* Button styling */
+.btn-cancel {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+}
+
+.btn-hold {
+  background-color: red;
+border: none;
+  color: white;
+  padding: 10px 20px;
+}
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust transparency */
+  z-index: 5;
+}
+.vector{
+
+  padding: 8px;
+}
+.search-input button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 44px;
+  width: 77px;
+  border-radius: 5px;
+}
+.btn-copy{
+  background-color: #0033a0;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+}
+.search-input {
+  width: 700px;
+  position: relative;
+}
+
+.search-input input[type="search"] {
+  height: 60px;
+
+  background-color: whitesmoke;
+  border: 2px solid #abb7c2;
+  font-family: Poppins;
+}
+.btn {
+  background: #012169;
+  color: white;
+  padding: 10px;
+  gap: 10px;
+}
+label {
+  color: #012169;
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+}
+
+.form-group {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid black;
+}
+  

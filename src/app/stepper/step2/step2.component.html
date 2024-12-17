@@ -1,0 +1,110 @@
+<div class="container">
+  <div class="background-overlay" *ngIf="isModalVisible"></div>
+
+
+  <div class="form-group">
+    <label>Is NFA Required?</label>
+    <input
+      type="radio"
+      name="nfa_required"
+      value="yes"
+      (change)="setNfaRequired(true)"
+    />
+    Yes
+    <input
+      type="radio"
+      name="nfa_required"
+      value="no"
+      (change)="setNfaRequired(false)"
+    />
+    No
+  </div>
+
+  <div *ngIf="isNfaRequired !== false">
+    <div class="form-group">
+      <label>Is NFA Available?</label>
+      <input
+        type="radio"
+        name="nfa_available"
+        value="yes"
+        (change)="setNfaAvailable(true)"
+      />
+      Yes
+      <input
+        type="radio"
+        name="nfa_available"
+        value="no"
+        (change)="setNfaAvailable(false)"
+      />
+      No
+    </div>
+
+
+    <div class="form-group" *ngIf="showFileUpload">
+      <label
+        >Upload NFA Document <span class="optional">(Optional)</span></label
+      >
+      <div class="card flex justify-content-center">
+        <p-toast></p-toast>
+        <p-fileUpload
+          mode="basic"
+          chooseLabel="Upload"
+          chooseIcon="pi pi-upload"
+          name="sapDocument[]"
+          url="https://www.primefaces.org/cdn/api/upload.php"
+          accept="image/*"
+          maxFileSize="1000000"
+          (onUpload)="onUpload($event)"
+        >
+        </p-fileUpload>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="buttons">
+    <button class="back-button" (click)="back.emit()">BACK</button>
+    <button class="next-button" (click)="next.emit()">NEXT</button>
+  </div>
+
+
+  <div
+    class="modal fade"
+    id="nfaModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="nfaModalLabel"
+    aria-hidden="true"
+    [ngClass]="{ show: showModal }"
+    [style.display]="showModal ? 'block' : 'none'"
+  >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <img class="vector" src="../../../assets/Vector.svg" />
+            <span style="padding-left: 8px">Decline</span>
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            (click)="closeModal()"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Your IRN is likely to decline if you proceed with the NFA process.
+          </p>
+          <div class="pop-over">
+            <button type="button" class="cancel" (click)="closeModal()">
+              Cancel
+            </button>
+            <button type="button" class="ok" (click)="hideFileUpload()">
+              OK
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

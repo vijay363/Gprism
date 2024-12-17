@@ -1,0 +1,137 @@
+.body {
+  background-color: whitesmoke;
+  padding: 20px;
+  height:100vh;
+}
+
+
+.top-section {
+  font-size: small;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align to the left */
+  margin-left: 100px;
+ 
+}
+
+.text {
+  color: #0033a0;
+  font-weight: 700;
+  font-family: Maven Pro;
+}
+
+.irn-details {
+  font-family: Maven Pro;
+  display: flex;
+  font-weight: 500;
+  gap: 50px;
+  margin-bottom: 10px;
+}
+
+.irn-details h6 {
+  font-weight: 500;
+  font-family: Maven Pro;
+  color: black;
+}
+
+.irn-details span {
+  font-family: Maven Pro;
+  color: #555;
+}
+
+.card {
+  display: flex;
+  justify-content: flex-start; 
+  flex-direction: column;
+  width: 80%;
+  height: 80%;
+  padding: 20px;
+  background-color: white;
+  margin-left: 100px;
+  z-index: 0;
+}
+
+.stepper {
+  display: flex;
+  width: 50%;
+  gap: 25px;
+  padding: 5px 0;
+}
+
+.step {
+  text-align: left;
+  flex: 1;
+  position: relative;
+}
+
+.step:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 13%;
+  right: -25%;
+  width: 110%;
+  height: 2px;
+  background-color: #d3d3d3;
+  z-index: 0;
+}
+
+.step .circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #d3d3d3;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.step.active .circle,
+.step.complete .circle {
+  background-color: #007bff;
+}
+
+.step.complete .circle {
+  background-color: #28a745;
+}
+
+.step .label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  font-family: Maven Pro;
+}
+
+.step .sub-label {
+  font-size: 12px;
+  color: #999;
+  font-family: Maven Pro;
+}
+
+.step.active .label,
+.step.complete .label {
+  font-weight: bold;
+}
+
+.step.active .sub-label,
+.step.complete .sub-label {
+  color: #007bff;
+}
+
+.step.active .sub-label {
+  transform: scale(1.05);
+  border-bottom: 4px solid #009cde;
+}
+.step.decline .circle {
+  background-color: #ff0000; // Red color for decline
+}
+
+.step.decline .sub-label {
+  color: #ff0000;
+}
+
+.step.decline .label {
+  font-weight: bold;
+  color: #ff0000;
+}

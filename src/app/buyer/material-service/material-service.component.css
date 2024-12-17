@@ -1,0 +1,40 @@
+
+  
+  .radio-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  label {
+    color: #012169;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+  }
+  
+  .form-group {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .bottom-field {
+    width: 85%;
+  }
+  .btn-submit {
+    float: right;
+  
+    padding: 10px 30px;
+    background-color: #003087;
+  
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+  }
+  input[type="text"] {
+    border: none;
+    border-bottom: 1px solid #33363f;
+  
+    color: black;
+    font-weight: 600;
+  }

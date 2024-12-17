@@ -1,0 +1,111 @@
+
+
+<div class="body">
+  <div class="top-section">
+    <h5 class="text">Create IRN</h5>
+    <div class="irn-details">
+      <div>
+        <h6>Auto Generated IRN</h6>
+        <span>IRN/2024-25/xxx</span>
+      </div>
+      <div>
+        <h6>IRN Date</h6>
+        <span>11/Sep/2024</span>
+      </div>
+    </div>
+
+    <div class="stepper">
+      <div
+        class="step"
+        [ngClass]="{
+          'active': currentStep === Step.Step1,
+          'complete': currentStep > Step.Step1
+        }"
+      >
+        <div class="circle"><i *ngIf="currentStep > 1" class="pi pi-check" style="color: black"></i></div>
+        <span class="label">Step 1</span>
+        <span class="sub-label">IRN Details</span>
+      </div>
+
+      <div
+        class="step"
+        *ngIf="!isNFA"
+        [ngClass]="{
+          'active': currentStep === Step.Step2,
+          'complete': currentStep > Step.Step2
+        }"
+      >
+        <div class="circle"><i *ngIf="currentStep > 2" class="pi pi-check" style="color: black"></i></div>
+        <span class="label">Step 2</span>
+        <span class="sub-label">NFA Details</span>
+      </div>
+
+      <div
+  class="step"
+  [ngClass]="{
+    'active': currentStep === (isNFA ? Step.Step2 : Step.Step3),
+    'complete': currentStep > (isNFA ? Step.Step2 : Step.Step3),
+    'decline': currentStep === (isNFA ? Step.Step2 : Step.Step3) && !isNfaAvailable
+  }"
+>
+  <div class="circle">
+    <i *ngIf="currentStep > (isNFA ? Step.Step2 : Step.Step3)" class="pi pi-check" style="color: black"></i>
+    <i *ngIf="currentStep === (isNFA ? Step.Step2 : Step.Step3) && !isNfaAvailable" class="pi pi-times" style="color: white"></i>
+  </div>
+  <span class="label">Step {{ isNFA ? Step.Step2 : Step.Step3 }}</span>
+  <span class="sub-label">{{ (isNfaAvailable === null) ? 'Success/Decline' : (isNfaAvailable ? 'Success' : 'Decline') }}</span>
+</div>
+
+      <div
+        class="step"
+        [ngClass]="{
+          'active': currentStep === (isNFA ? Step.Step3 : Step.Step4),
+          'complete': currentStep > (isNFA ? Step.Step3 : Step.Step4)
+        }"
+      >
+        <div class="circle"><i *ngIf="currentStep > (isNFA ? Step.Step3 : Step.Step4)" class="pi pi-check" style="color: black"></i></div>
+        <span class="label">Step {{ isNFA ? Step.Step3 : Step.Step4 }}</span>
+        <span class="sub-label">Buyer Details</span>
+      </div>
+    </div>
+    
+  </div>
+
+<div >
+
+ 
+    <div class="card">
+      <div *ngIf="currentStep === Step.Step1">
+        <app-step1
+          (next)="nextStep()"
+          (updateIsNFA)="updateIsNFA($event)"
+        ></app-step1>
+      </div>
+      
+      <div *ngIf="currentStep === Step.Step2 && !isNFA">
+        <app-step2 
+          (back)="previousStep()" 
+          (next)="nextStep()"
+          (nfaAvailable)="updateNfaAvailability($event)"
+        ></app-step2>
+      </div>
+      
+      <div *ngIf="currentStep === (isNFA ? Step.Step2 : Step.Step3)">
+        <app-step3 
+  [isNfaAvailable]="isNfaAvailable"
+  (back)="previousStep()" 
+  (proceed)="nextStep()"
+  (nfaAvailable)="updateNfaAvailability($event)"
+></app-step3>
+      </div>
+      
+      <div *ngIf="currentStep === (isNFA ? Step.Step3 : Step.Step4)">
+        <app-step4 
+          (back)="previousStep()"
+        ></app-step4>
+      </div>
+    </div>
+  </div>
+
+</div>
+

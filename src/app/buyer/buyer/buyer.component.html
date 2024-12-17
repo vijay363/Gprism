@@ -1,0 +1,110 @@
+<div class="conatiner">
+  <div class="row">
+    <div class="background-overlay" *ngIf="isModalVisible"></div>
+    <div>
+      <h6>IRN's LIST >> IRN/2024-25/001</h6>
+    </div>
+    <div class="items">
+      <div>
+        <p>Created on 5/06/2024</p>
+        <h6>IRN/2024-25/001</h6>
+      </div>
+
+      <div>
+        <p>PR NO</p>
+        <h6>DTNPL/IT/PR-039</h6>
+      </div>
+      <div>
+        <p class="pr-pdf">PR Doc.pdf</p>
+
+        <h6>PR Document</h6>
+      </div>
+      <div>
+        <p class="nfa-pdf">NFA Doc.pdf</p>
+
+        <h6>NFA Document</h6>
+      </div>
+      <div>
+        <button class="Irn" (click)="irnHold()">IRN on HOLD</button>
+      </div>
+
+      <div class="modal fade" id="holdirnModal" tabindex="-1" aria-labelledby="confirmationModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered custom-modal-dialog">
+          <div class="modal-content custom-modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">
+                <img class="vector" src="../../../assets/Vector.svg" />IRN on
+                Hold
+              </h5>
+
+              <button type="button" class="btn-close" (click)="closeModal()" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="irnholdDate">IRN Hold Date</label>
+                <p>{{ value | date:'shortDate' }}</p>
+
+              </div>
+              <div class="form-group">
+                <label for="reasonforHold">Reason for Hold</label>
+                <input type="text" id="lpp" class="input-field" placeholder="some reason" />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn-cancel" (click)="closeModal()">
+                Cancel
+              </button>
+              <button type="button" class="btn-hold">Hold</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button class="copy" (click)="irnCopy()">Copied FROM IRN</button>
+      </div>
+
+      <div class="modal fade" id="copyModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered custom-modal-dialog">
+          <div class="modal-content custom-modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Copy IRN</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                (click)="closeCopy()"></button>
+            </div>
+            <div class="modal-body">
+              <div class="search-input">
+                <input type="search" class="form-control" placeholder="Search IRN/PR/Status ..." aria-label="Search" />
+                <button class="btn" type="submit">Search</button>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn-cancel" data-bs-dismiss="modal" (click)="closeCopy()">
+                Cancel
+              </button>
+              <button type="button" class="btn-copy">Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button (click)="navigateToGeneraterfq()" class="rfq">
+          Genarate RFQ
+        </button>
+      </div>
+    </div>
+
+    <div class="div">
+      <div class="card">
+        <div class="left-card">
+          <app-steps></app-steps>
+        </div>
+        <div class="right-card">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

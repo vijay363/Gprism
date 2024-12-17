@@ -1,0 +1,104 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.container img {
+  height: 100px;
+}
+
+.container h1 {
+  font-size: 24px;
+  color: #000000;
+  margin: 20px 0 10px;
+}
+
+.container p {
+  font-family: Maven Pro;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28.2px;
+  text-align: left;
+}
+
+.container .subtext {
+  font-family: Maven Pro;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28.2px;
+  text-align: left;
+  color: #009cde;
+}
+
+.container .irn {
+  font-family: Maven Pro;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 56.4px;
+  text-align: left;
+  color: #000000;
+}
+
+.buttons {
+  display: flex; 
+  width: 508px; 
+  height: 48px; 
+  gap: 15px; 
+  opacity: 1; 
+}
+
+.buttons button {
+  padding: 10px 20px;
+  font-size: 14px; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+}
+
+.buttons .dashboard {
+  width: 250px;
+  height: 48px;
+  padding: 10px 40px 10px 40px;
+  gap: 10px;
+  border-radius: 4px 4px 4px 4px;
+  border: 1px solid black;
+  opacity: 1px;
+  background-color: white;
+  font-family: Maven Pro;
+  font-weight: 600;
+}
+
+.buttons .proceed {
+  width: 236px;
+  height: 48px;
+  padding: 10px 40px 10px 40px;
+  gap: 10px;
+  border-radius: 4px 4px 4px 4px;
+  opacity: 0px;
+
+  background: #003087;
+  color: #ffffff;
+  font-family: Maven Pro;
+  font-weight: 600;
+}
+.buttons .OK {
+  background-color: #003087;
+  color: #ffffff;
+  font-family: Maven Pro;
+  font-weight: 600;
+  width: Hug (111px)px;
+height: Hug (48px)px;
+padding: 10px 40px 10px 40px;
+gap: 10px;
+border-radius: 4px 0px 0px 0px;
+opacity: 0px;
+
+}.Decline{
+  color: #E20000;
+}
+.container .buttons{
+  justify-content: center;
+}
